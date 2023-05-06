@@ -1,0 +1,7 @@
+C:\Users\Studying\source\repos\AtmMachine\AtmMachine\bin\Debug\AtmMachine.exe.config
+C:\Users\Studying\source\repos\AtmMachine\AtmMachine\bin\Debug\AtmMachine.exe
+C:\Users\Studying\source\repos\AtmMachine\AtmMachine\bin\Debug\AtmMachine.pdb
+C:\Users\Studying\source\repos\AtmMachine\AtmMachine\obj\Debug\AtmMachine.csproj.AssemblyReference.cache
+C:\Users\Studying\source\repos\AtmMachine\AtmMachine\obj\Debug\AtmMachine.csproj.CoreCompileInputs.cache
+C:\Users\Studying\source\repos\AtmMachine\AtmMachine\obj\Debug\AtmMachine.exe
+C:\Users\Studying\source\repos\AtmMachine\AtmMachine\obj\Debug\AtmMachine.pdb
