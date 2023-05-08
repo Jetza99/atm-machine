@@ -16,7 +16,7 @@ namespace AtmMachine
             Client client = new Client(1, 1);
             AtmConsole screen = new AtmConsole(client);
             screen.Controle();
-            //screen.VerifyPin();
+           
 
 
         }

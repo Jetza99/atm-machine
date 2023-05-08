@@ -32,42 +32,21 @@ namespace AtmMachine
             EnterScreen();
             if (VerifyPin())
             {
-                Menu(false);
+                Menu();
 
             }
 
         }
 
-        private void Menu(bool getBack)
+        private void Menu()
         {
-             
-
-            while (getBack)
+            
+            while (true)
             {
-                Console.WriteLine(@"To get back to the previous screen. Type b.
-                    To Exit. Type 0.");
-                string getBackKey = Console.ReadLine();
-
-                if(getBackKey.ToLower() == "b" )
-                {
-                    getBack = false;
-                    Menu(getBack);
-                }else if(getBackKey == "0")
-                {
-                    Environment.Exit(0);
-                }
-                else
-                {
-                    Console.WriteLine("Please enter the correct key.");
-                    getBackKey = Console.ReadLine();
-                    Menu(true);
-                }
-            }
-
-            Console.Clear();
+                Console.Clear();
 
 
-            Console.WriteLine(@"Welcome to your account, Omar!
+                Console.WriteLine(@"Welcome to your account, Omar!
 
             Please select an option to move forward:
             1. Widhdraw funds
@@ -77,42 +56,61 @@ namespace AtmMachine
             0. Exit");
 
 
-            int option = int.Parse(Console.ReadLine());
-
-
-            do
-            {
+                int option = int.Parse(Console.ReadLine());
 
                 switch (option)
                 {
                     case 1:
                         WidhrawlMenu();
-                        Menu(true);
-                        
+                        BackToPreviousScreen();
                         break;
                     case 2:
-                        ConsultBalance();
-                        
+                        Console.Clear();
+                        Console.WriteLine("Your current balance: $" + client.Balance);
+                        BackToPreviousScreen();
+
                         break;
                     case 3:
                         client.History();
+                        BackToPreviousScreen();
                         break;
                     case 0:
                         Environment.Exit(0);
                         break;
                     default:
-                        Console.WriteLine("Please enter a correct option (1 OR 2 OR 3 OR 0");
+                        Console.WriteLine("Please enter a correct option 1 OR 2 OR 3 OR 0");
                         break;
 
                 }
+                
+            }
+                
 
-            } while (option < 0 || option > 3);
+          
         }
 
-        private void ConsultBalance()
+        private void BackToPreviousScreen()
         {
-            Console.Clear();
-            Console.WriteLine("Your current balance: $" + client.Balance);
+            bool getBack = true;
+            while (getBack)
+            {
+                Console.WriteLine("To get back to the previous screen. Type b. To Exit, Type 0.");
+                string getBackKey = Console.ReadLine();
+
+              if(getBackKey.ToLower() == "b" )
+               {
+                   getBack = false;
+                    return;
+               }else if(getBackKey == "0")
+                {
+                    Environment.Exit(0);
+                }
+                else
+                {
+                    Console.WriteLine("Please enter the correct key.");
+                    getBackKey = Console.ReadLine();
+                }
+            }
         }
 
         public void WidhrawlMenu()
@@ -159,7 +157,7 @@ namespace AtmMachine
 
         public void EnterScreen()
         {
-            long number;
+
             do
             {
                 Console.WriteLine("Hello, please enter your 16-digit card number.");
@@ -170,3 +168,5 @@ namespace AtmMachine
         }
     }
 }
+
+

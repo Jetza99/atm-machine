@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace AtmMachine
 {
-    class Client : Operations
+    class Client
     {
 
         public long CardNumber { get; private set; }
@@ -23,7 +23,7 @@ namespace AtmMachine
 
         }
 
-        public override void Widhdrawl(float moneyToWidhraw)
+        public void Widhdrawl(float moneyToWidhraw)
         {
             if(moneyToWidhraw <= Balance && moneyToWidhraw <= 1000f)
             {
@@ -59,7 +59,7 @@ namespace AtmMachine
                 
             }
 
-            
         }
+
     }
 }
